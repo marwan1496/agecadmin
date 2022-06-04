@@ -118,6 +118,8 @@ Route::get('/project-details/{id}', function ($id) {
 
     $projects_types = ProjectType::where('project_id',$id)->get();
 
+    
+
     return view('projects.project_details',compact(['project','sliderImagesArray','section_one_features_list','section_two_features_list','projects_types']));
 });
 
