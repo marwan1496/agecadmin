@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
+@section('more_styles')
+<link type="text/css" rel="stylesheet" href="{{URL::to('/');}}/css/lightgallery-bundle.min.css" />
+@endsection
+
 @section('content')
 <style>
-    /* .property .popup-youtube{
-        top: auto;
-        bottom: 25%;
-    } */
-    /* .property.wprt-image-video .iq-waves{
-        top: auto;
-        bottom: 17.5%;
-    } */
+
     .inner-pages .blog .wprt-image-video.w50{
         position: relative;
     }
@@ -21,16 +18,17 @@
 .accordion>.card>.card-header h2 button{
     color: #b68e2c
 }
-    /* @media(max-width:600px){
-        .property .popup-youtube {
-        top: auto !important;
-        bottom: 15% !important;
-        }
-    .property.wprt-image-video .iq-waves{
-        top: auto !important;
-        bottom: 7.5% !important;
-    }
-    } */
+.tab-content {
+    padding: 20px;
+}
+.nav-tabs .nav-link.active {
+   background: #b68e2c;
+    color: #fff;
+}
+.nav-tabs .nav-link{
+    color: #b68e2c;
+}
+
 </style>
     <!-- Wrapper -->
     <div id="wrapper">
@@ -39,35 +37,38 @@
         <section class="single-proper blog details">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-md-12 blog-pots">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <section class="headings-2 pt-0">
-                                    <div class="pro-wrapper">
-                                        <div class="detail-wrapper-body">
-                                            <div class="listing-title-bar">
-                                                <h3>{{ $project[0]->title }}</h3>
-                                                <div class="mt-0">
-                                                    <a href="#listing-location" class="listing-address">
-                                                        <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>77 - Central Park South, NYC
-                                                    </a>
-                                                </div>
+                    <div class="col-lg-12 col-md-12 blog-pots">
+
+                        <section class="headings-2 pt-0">
+                            <div class="pro-wrapper">
+                                <div class="detail-wrapper-body">
+                                    <div class="listing-title-bar">
+                                        <h3>{{ $project[0]->title }}</h3>
+                                        <div class="mt-0">
+                                            {{-- <a href="#listing-location" class="listing-address">
+                                                <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>77 - Central Park South, NYC
+                                            </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="single detail-wrapper mr-2">
+                                    <div class="detail-wrapper-body">
+                                        <div class="listing-title-bar">
+                                            <h4>$ 230,000</h4>
+                                            <div class="mt-0">
+                                                <a href="#listing-location" class="listing-address">
+                                                    <p>$ 1,200 / sq ft</p>
+                                                </a>
                                             </div>
                                         </div>
-                                        {{-- <div class="single detail-wrapper mr-2">
-                                            <div class="detail-wrapper-body">
-                                                <div class="listing-title-bar">
-                                                    <h4>$ 230,000</h4>
-                                                    <div class="mt-0">
-                                                        <a href="#listing-location" class="listing-address">
-                                                            <p>$ 1,200 / sq ft</p>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                     </div>
-                                </section>
+                                </div> --}}
+                            </div>
+                        </section>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                
                                 <!-- main slider carousel items -->
                                 <div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
                                     <h5 class="mb-4">Gallery</h5>
@@ -111,13 +112,57 @@
                                     </ul>
                                     <!-- main slider carousel items -->
                                 </div>
-                                <div class="blog-info details mb-30">
+                                {{-- <div class="blog-info details mb-30">
                                     <h5 class="mb-4">Description</h5>
                                     <p class="mb-3">
                                         {!!$project[0]->small_description!!}</p>
-                                </div>
+                                </div> --}}
                             </div>
+
+                            <aside class="col-lg-4 col-md-12 car">
+                                <div class="single widget">
+                                    <!-- end author-verified-badge -->
+                                    <div class="sidebar">
+                                        <div class="widget-boxed mt-33">
+                                            <div class="widget-boxed-header">
+                                                <h4>Request Inquiry</h4>
+                                            </div>
+                                            <div class="widget-boxed-body">
+                                                <div class="sidebar-widget author-widget2">
+                                                    {{-- <div class="author-box clearfix">
+                                                        <img src="{{URL::to('/');}}/images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
+                                                        <h4 class="author__title">Lisa Clark</h4>
+                                                        <p class="author__meta">Agent of Property</p>
+                                                    </div>
+                                                    <ul class="author__contact">
+                                                        <li><span class="la la-map-marker"><i class="fa fa-map-marker"></i></span>302 Av Park, New York</li>
+                                                        <li><span class="la la-phone"><i class="fa fa-phone" aria-hidden="true"></i></span><a href="#">(234) 0200 17813</a></li>
+                                                        <li><span class="la la-envelope-o"><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">lisa@gmail.com</a></li>
+                                                    </ul> --}}
+                                                    <div class="agent-contact-form-sidebar" style="border: none">
+                                                        {{-- <h4>Request Inquiry</h4> --}}
+                                                        <form name="contact_form" method="post" action="https://code-theme.com/html/findhouses/functions.php">
+                                                            <input type="text" id="fname" name="full_name" placeholder="Full Name" required />
+                                                            <input type="number" id="pnumber" name="phone_number" placeholder="Phone Number" required />
+                                                            <input type="email" id="emailid" name="email_address" placeholder="Email Address" required />
+                                                            <textarea placeholder="Message" name="message" required></textarea>
+                                                            <input type="submit" name="sendmessage" class="multiple-send-message" value="Submit Request" />
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside>
+
                         </div>
+                        <div class="blog-info details mb-30">
+                            <h5 class="mb-4">Description</h5>
+                            <p class="mb-3">
+                                {!!$project[0]->small_description!!}</p>
+                        </div>
+
                         <div class="single homes-content details mb-30">
                             <!-- title -->
                             <h5 class="mb-4">{{$project[0]->section_one_title}}</h5>
@@ -168,32 +213,65 @@
                             </div>
                         </div>
 
+                        @if (count($projects_types) > 0)
+                            
+                        
                         <div class="floor-plan property wprt-image-video w50 pro">
-                            <h5>{{$project[0]->project_types_title}}</h5>
-                            <div class="accordion" id="accordionExample">
+                            <h5>Project Types</h5>
+                            <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
                                 @foreach ($projects_types as $key=>$projects_type)
-                                    
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                      <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{$projects_type->id}}" aria-expanded="true" aria-controls="collapse{{$projects_type->id}}">
-                                          {{$projects_type->title}}
-                                        </button>
-                                      </h2>
-                                    </div>
                                 
-                                    <div id="collapse{{$projects_type->id}}" class="collapse {{$key == 0 ? 'show' : ''}}" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                      <div class="card-body">
-                                        {{$projects_type->content}}
-                                      </div>
-                                    </div>
-                                  </div>
+                                <a class="nav-link {{ $key == 0 ? "active" : "" }}" id="nav-{{$projects_type->id}}-tab" data-toggle="tab" href="#nav-{{$projects_type->id}}" role="tab" aria-controls="nav-{{$projects_type->id}}" aria-selected="true">{{$projects_type->title}}</a>
 
                                 @endforeach
+                            </div>
+                            </nav>
+
+                            <div class="tab-content" id="nav-tabContent">
+                              
+
+                            @foreach ($projects_types as $key=>$projects_type)
+
                                 
-                              </div>
+                            <div class="tab-pane fade {{ $key == 0 ? "show active" : "" }}" id="nav-{{$projects_type->id}}" role="tabpanel" aria-labelledby="nav-{{$projects_type->id}}-tab">
+                                {{$projects_type->content}}
+                            
+                            @php
+                                $project_type_gallery = json_decode($projects_type->gallery);
+                            @endphp
+                            @if (count($project_type_gallery) > 0)
+                                
+                            <div id="nav-{{$projects_type->title}}" class="mt-4 mb-4">
+
+                            @foreach ($project_type_gallery as $image)
+                            <a href="{{Voyager::image($image)}}">
+                                <img src="{{Voyager::image($image)}}" style="width: 30%"/>
+                              </a>
+                            @endforeach
+
+                            </div>
+
+                            <script type="text/javascript">
+                                
+                                document.addEventListener("DOMContentLoaded", function(event) { 
+                                
+                                    lightGallery(document.getElementById("nav-{{$projects_type->title}}"), {
+                                    plugins: [lgZoom, lgThumbnail],
+                                speed: 500,
+                                thumbnail:true
+                                }); 
+                                });
+                            </script>
+
+                            @endif
+                            </div>
+
+                            @endforeach
+                            </div>
                         </div>
+                        @endif
                         
                         <div class="property-location map">
                             <h5>Location</h5>
@@ -205,42 +283,6 @@
 
 
                     </div>
-                    <aside class="col-lg-4 col-md-12 car">
-                        <div class="single widget">
-                            <!-- end author-verified-badge -->
-                            <div class="sidebar">
-                                <div class="widget-boxed mt-33 mt-5">
-                                    <div class="widget-boxed-header">
-                                        <h4>Request Inquiry</h4>
-                                    </div>
-                                    <div class="widget-boxed-body">
-                                        <div class="sidebar-widget author-widget2">
-                                            {{-- <div class="author-box clearfix">
-                                                <img src="{{URL::to('/');}}/images/testimonials/ts-1.jpg" alt="author-image" class="author__img">
-                                                <h4 class="author__title">Lisa Clark</h4>
-                                                <p class="author__meta">Agent of Property</p>
-                                            </div>
-                                            <ul class="author__contact">
-                                                <li><span class="la la-map-marker"><i class="fa fa-map-marker"></i></span>302 Av Park, New York</li>
-                                                <li><span class="la la-phone"><i class="fa fa-phone" aria-hidden="true"></i></span><a href="#">(234) 0200 17813</a></li>
-                                                <li><span class="la la-envelope-o"><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="#">lisa@gmail.com</a></li>
-                                            </ul> --}}
-                                            <div class="agent-contact-form-sidebar" style="border: none">
-                                                {{-- <h4>Request Inquiry</h4> --}}
-                                                <form name="contact_form" method="post" action="https://code-theme.com/html/findhouses/functions.php">
-                                                    <input type="text" id="fname" name="full_name" placeholder="Full Name" required />
-                                                    <input type="number" id="pnumber" name="phone_number" placeholder="Phone Number" required />
-                                                    <input type="email" id="emailid" name="email_address" placeholder="Email Address" required />
-                                                    <textarea placeholder="Message" name="message" required></textarea>
-                                                    <input type="submit" name="sendmessage" class="multiple-send-message" value="Submit Request" />
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
                 </div>
 
             </div>
@@ -253,6 +295,14 @@
 @endsection
 
 @section('more_scripts')
+
+<script src="{{URL::to('/');}}/js/lightgallery.umd.js"></script>
+
+<!-- lightgallery plugins -->
+<script src="{{URL::to('/');}}/js/lg-thumbnail.umd.js"></script>
+<script src="{{URL::to('/');}}/js/lg-zoom.umd.js"></script>
+
+
 
 <script>
 document.body.classList.add(

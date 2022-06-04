@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2022 at 05:38 PM
+-- Generation Time: Jun 04, 2022 at 08:03 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.18
 
@@ -204,7 +204,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (116, 13, 'project_id', 'text', 'Project Id', 0, 0, 1, 1, 1, 1, '{}', 4),
 (117, 13, 'project_type_belongsto_project_relationship', 'relationship', 'projects', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Project\",\"table\":\"projects\",\"type\":\"belongsTo\",\"column\":\"project_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"careers\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
 (118, 11, 'project_category_belongstomany_project_relationship', 'relationship', 'projects', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Project\",\"table\":\"projects\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"project_p_categories\",\"pivot\":\"1\",\"taggable\":\"0\"}', 6),
-(119, 10, 'project_types_title', 'text', 'Project Types Title', 0, 0, 1, 1, 1, 1, '{}', 18);
+(120, 13, 'gallery', 'media_picker', 'Gallery', 0, 0, 1, 1, 1, 1, '{\"max\":100,\"min\":0}', 7);
 
 -- --------------------------------------------------------
 
@@ -241,13 +241,13 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2022-05-26 05:27:05', '2022-05-26 05:27:05'),
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2022-05-26 05:27:05', '2022-05-26 05:27:05'),
 (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 05:27:05', '2022-05-30 19:42:32'),
-(7, 'page_components', 'page-components', 'Page Component', 'Page Components', NULL, 'App\\PageComponent', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 05:29:15', '2022-06-01 08:48:31'),
+(7, 'page_components', 'page-components', 'Page Component', 'Page Components', NULL, 'App\\PageComponent', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 05:29:15', '2022-06-04 14:58:10'),
 (8, 'page_slider', 'page-slider', 'Page Slider', 'Page Sliders', NULL, 'App\\PageSlider', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2022-05-26 05:37:25', '2022-05-26 05:37:25'),
 (9, 'page_sliders', 'page-sliders', 'Page Slider', 'Page Sliders', NULL, 'App\\PageSlider', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 05:44:42', '2022-05-27 17:08:46'),
-(10, 'projects', 'projects', 'Project', 'Projects', NULL, 'App\\Project', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 08:40:41', '2022-06-04 13:20:31'),
+(10, 'projects', 'projects', 'Project', 'Projects', NULL, 'App\\Project', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 08:40:41', '2022-06-04 14:47:48'),
 (11, 'project_categories', 'project-categories', 'Project Category', 'Project Categories', NULL, 'App\\ProjectCategory', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-05-26 08:56:46', '2022-06-04 13:11:07'),
 (12, 'careers', 'careers', 'Career', 'Careers', NULL, 'App\\Career', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-06-02 10:34:57', '2022-06-02 10:39:36'),
-(13, 'project_types', 'project-types', 'Project Type', 'Project Types', NULL, 'App\\ProjectType', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-06-04 12:58:34', '2022-06-04 13:12:38');
+(13, 'project_types', 'project-types', 'Project Type', 'Project Types', NULL, 'App\\ProjectType', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2022-06-04 12:58:34', '2022-06-04 14:55:49');
 
 -- --------------------------------------------------------
 
@@ -771,16 +771,15 @@ CREATE TABLE `projects` (
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `featured_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `project_types_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `featured_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `title`, `sub_title`, `images`, `small_description`, `section_one_title`, `section_one_description`, `section_one_features_list`, `section_two_title`, `section_two_description`, `section_two_features_list`, `video_link`, `section_three_title`, `section_three_sub_title`, `image_one_link`, `image_two_link`, `address`, `created_at`, `updated_at`, `featured_image`, `project_types_title`) VALUES
-(1, 'IVY Residence', 'A Vision For Life', '[\"projects\\\\May2022\\\\opnRClY7rOkrqFMdgoCh.jpg\",\"projects\\\\May2022\\\\cvmU3SUI7BtnR9HYl8w2.jpg\",\"projects\\\\May2022\\\\JDXienEhIwDLeJHwY9La.jpg\",\"projects\\\\May2022\\\\o0tZQIdeSKSClBSo70Vd.jpg\",\"projects\\\\May2022\\\\DuFrOFIE3CGMHjMdhUdM.jpg\",\"projects\\\\May2022\\\\TR9Ts2yM4sgttj335fNf.jpg\"]', 'Situated ideally on the Suez Road, IVY Residence is a home to an assorted selection of spacious 65 villas and tailor-made 306 apartments in a reflection to our dedication to helping you attain the quality of life you want within a green building concept and smart technology. With facilities created with your future in mind, we developed IVY Residence with all the facilities you need for the perfect life including a sporting club, Club House, commercial center and strip Mall amidst breathtaking water features and greenery.\r\nThis project is being constructed In collaboration with Al-Maadi for Development and Construction (One of the public sector companies owned by the holding company for construction and development) on the Suez Road directly in front of Madinaty in the city of Shorouk)\r\n<br/>\r\n<b>Efficient Designer - Green Building Concept - Smart Technology</b>', 'Improving Livability in Shorouk City', 'Apartments and flats in Ivy reflect our dedication to helping you attain the quality of life you want. With facilities created with your future in mind, we developed Ivy with all the facilities you need for the perfect life', '65 palatial spacious villas,\r\nTailor-made choice apartments,\r\nSporting club,\r\nClub House,\r\nCommercial Center,\r\nStrip Mall,\r\nWater Features,\r\nMosque', 'Your Time is Now', 'Unwind as you trod down over 2.5km of green lanes in the idyllic IVY Residence. With over 75% of the space covered in natural grace, begin a lifetime of priceless memories.', '2.5 kilometers of bike lanes,\r\nOver 1.5 kilometers of leisurely promenades', 'https://agecdevelopments.com/videos/video1.mp4', 'Master Plan', 'Live In an Island in Greenary', 'projects\\May2022\\wAPcLVSN841V0hZ0wBxT.jpg', 'projects\\May2022\\WDJhn5cAAeki7QFe24EO.jpg', 'IVY Residence is in near today’s destinations, and in the center of the future’s ones. Right on Suez Road, In front of Madinaty, 10 minutes from New Cairo,20 minutes to Heliopolis and Nasr City', '2022-05-26 09:20:19', '2022-06-04 13:20:10', 'projects\\May2022\\UF6qWHekubyoMaL9EJRf.jpg', 'Project Types');
+INSERT INTO `projects` (`id`, `title`, `sub_title`, `images`, `small_description`, `section_one_title`, `section_one_description`, `section_one_features_list`, `section_two_title`, `section_two_description`, `section_two_features_list`, `video_link`, `section_three_title`, `section_three_sub_title`, `image_one_link`, `image_two_link`, `address`, `created_at`, `updated_at`, `featured_image`) VALUES
+(1, 'IVY Residence', 'A Vision For Life', '[\"projects\\\\May2022\\\\opnRClY7rOkrqFMdgoCh.jpg\",\"projects\\\\May2022\\\\cvmU3SUI7BtnR9HYl8w2.jpg\",\"projects\\\\May2022\\\\JDXienEhIwDLeJHwY9La.jpg\",\"projects\\\\May2022\\\\o0tZQIdeSKSClBSo70Vd.jpg\",\"projects\\\\May2022\\\\DuFrOFIE3CGMHjMdhUdM.jpg\",\"projects\\\\May2022\\\\TR9Ts2yM4sgttj335fNf.jpg\"]', 'Situated ideally on the Suez Road, IVY Residence is a home to an assorted selection of spacious 65 villas and tailor-made 306 apartments in a reflection to our dedication to helping you attain the quality of life you want within a green building concept and smart technology. With facilities created with your future in mind, we developed IVY Residence with all the facilities you need for the perfect life including a sporting club, Club House, commercial center and strip Mall amidst breathtaking water features and greenery.\r\nThis project is being constructed In collaboration with Al-Maadi for Development and Construction (One of the public sector companies owned by the holding company for construction and development) on the Suez Road directly in front of Madinaty in the city of Shorouk)\r\n<br/>\r\n<b>Efficient Designer - Green Building Concept - Smart Technology</b>', 'Improving Livability in Shorouk City', 'Apartments and flats in Ivy reflect our dedication to helping you attain the quality of life you want. With facilities created with your future in mind, we developed Ivy with all the facilities you need for the perfect life', '65 palatial spacious villas,\r\nTailor-made choice apartments,\r\nSporting club,\r\nClub House,\r\nCommercial Center,\r\nStrip Mall,\r\nWater Features,\r\nMosque', 'Your Time is Now', 'Unwind as you trod down over 2.5km of green lanes in the idyllic IVY Residence. With over 75% of the space covered in natural grace, begin a lifetime of priceless memories.', '2.5 kilometers of bike lanes,\r\nOver 1.5 kilometers of leisurely promenades', 'https://agecdevelopments.com/videos/video1.mp4', 'Master Plan', 'Live In an Island in Greenary', 'projects\\May2022\\wAPcLVSN841V0hZ0wBxT.jpg', 'projects\\May2022\\WDJhn5cAAeki7QFe24EO.jpg', 'IVY Residence is in near today’s destinations, and in the center of the future’s ones. Right on Suez Road, In front of Madinaty, 10 minutes from New Cairo,20 minutes to Heliopolis and Nasr City', '2022-05-26 09:20:19', '2022-06-04 13:20:10', 'projects\\May2022\\UF6qWHekubyoMaL9EJRf.jpg');
 
 -- --------------------------------------------------------
 
@@ -835,16 +834,17 @@ CREATE TABLE `project_types` (
   `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `project_id` int(11) DEFAULT NULL
+  `project_id` int(11) DEFAULT NULL,
+  `gallery` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `project_types`
 --
 
-INSERT INTO `project_types` (`id`, `title`, `content`, `created_at`, `updated_at`, `project_id`) VALUES
-(1, 'Project Accordion 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-06-04 13:11:32', '2022-06-04 13:11:32', 1),
-(2, 'Project Accordion Two', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-06-04 13:31:26', '2022-06-04 13:31:26', 1);
+INSERT INTO `project_types` (`id`, `title`, `content`, `created_at`, `updated_at`, `project_id`, `gallery`) VALUES
+(1, 'Project Accordion 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-06-04 13:11:00', '2022-06-04 15:50:09', 1, '[\"project-types/about3.jpg\",\"project-types/about6.jpg\",\"project-types/about5.jpg\",\"project-types/about4.jpg\",\"project-types/h4-img-4.jpg\"]'),
+(2, 'Project Accordion Two', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-06-04 13:31:00', '2022-06-04 15:50:38', 1, '[\"project-types/about3.jpg\",\"project-types/about4.jpg\",\"project-types/about5.jpg\"]');
 
 -- --------------------------------------------------------
 
@@ -1071,7 +1071,8 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (139, 'data_rows', 'display_name', 93, 'ar', 'Featured Image', '2022-06-04 13:19:51', '2022-06-04 13:19:51'),
 (140, 'data_types', 'display_name_singular', 10, 'ar', 'Project', '2022-06-04 13:19:51', '2022-06-04 13:19:51'),
 (141, 'data_types', 'display_name_plural', 10, 'ar', 'Projects', '2022-06-04 13:19:51', '2022-06-04 13:19:51'),
-(142, 'data_rows', 'display_name', 119, 'ar', 'Project Types Title', '2022-06-04 13:20:31', '2022-06-04 13:20:31');
+(142, 'data_rows', 'display_name', 119, 'ar', 'Project Types Title', '2022-06-04 13:20:31', '2022-06-04 13:20:31'),
+(143, 'data_rows', 'display_name', 120, 'ar', 'Gallery', '2022-06-04 14:52:31', '2022-06-04 14:52:31');
 
 -- --------------------------------------------------------
 
@@ -1098,7 +1099,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$He0CUfBweDQteSBglrowxevyDR4HvtaJXZhSkYc6jqdFct0i2DaL2', 'WYuGKjLnPnFMuw0Lyo3TO0F28HnV3TLVCZfMyGT7UBIl6kKJ0ZrFeXdE3dWa', NULL, '2022-05-26 05:27:05', '2022-05-26 05:27:05');
+(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$He0CUfBweDQteSBglrowxevyDR4HvtaJXZhSkYc6jqdFct0i2DaL2', 'sdX6OJTzbSMHZ40nVKcJzSnPuOjTUygE6yelTMqUUtsnDE840HBfHuHCwPDJ', NULL, '2022-05-26 05:27:05', '2022-05-26 05:27:05');
 
 -- --------------------------------------------------------
 
@@ -1307,7 +1308,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `data_types`
@@ -1415,7 +1416,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `users`
