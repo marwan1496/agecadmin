@@ -1,0 +1,18 @@
+/*Sidebar Nav*/
+.voyager .side-menu.sidebar-inverse {
+    background: #21295b;
+}
+.voyager .side-menu.sidebar-inverse .navbar li>a{
+    color: #fff;
+}
+.voyager .side-menu.sidebar-inverse .navbar li>a:hover {
+    background: #ac8830;
+    color: #fff;
+}
+.voyager .side-menu.sidebar-inverse .navbar li.active {
+    background: #ad8931;
+}
+/*Buttons*/
+.btn.btn-primary{
+    background-color: #b68e2c;
+}
